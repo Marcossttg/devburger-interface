@@ -43,7 +43,7 @@ export const RightContainer = styled.div`
 	p {
 		color: #FFF;
 		text-align: center;
-		font-family: Poppins;
+		font-family: Poppins, sans-serif;
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 700;
@@ -51,14 +51,13 @@ export const RightContainer = styled.div`
 	}
   a {
 		color: #FFF;
-		font-family: Poppins;
+		font-family: Poppins, sans-serif;
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
 		text-decoration-line: underline;
     text-decoration: underline;
-    cursor: pointer;
     transition: ease-in-out;
 
     &:hover {
@@ -79,7 +78,7 @@ export const Title = styled.h2`
 
 	span {
 		color: #9758A6;
-		font-family: "Road Rage";
+		font-family: "Road Rage", sans-serif;
 		font-size: 40px;
 		font-style: normal;
 		font-weight: 400;
@@ -123,34 +122,4 @@ export const InputContainer = styled.div`
 		height: 52px;
 		padding: 0 16px;
 	}
-
-`
-
-export const Button = styled.button`
- 	width: 350px;
-	height: 52px;
-	flex-shrink: 0;
-	border-radius: 5px;
-	background: #9758A6;
-	color: #FFF;
-
-	text-align: center;
-	font-family: "Road Rage";
-	font-size: 30px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-
-  cursor: pointer;
-  border: none;
-  transition: ease-in-out;
-
-  &:hover {
-    opacity: 0.8;
-    transform: scale(1.1);
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
 `
