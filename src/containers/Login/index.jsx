@@ -1,8 +1,12 @@
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
 import { api } from "../../services/api"
 
+// Biblioteca de feedback de eventos
+import * as yup from "yup"
+import { toast } from 'react-toastify'
+
+// UseContext hook
 import Logo from '../../assets/logo.svg'
 import { Button } from "../../components/Button"
 
@@ -36,10 +40,17 @@ export function Login() {
   })
 
   const onSubmit = async (data) => {
-    const response = await api.post('/session', {
-      email: data.email,
-      password: data.password,
-    })
+    const response = await toast.promise(
+      api.post('/session', {
+        email: data.email,
+        password: data.password,
+      }),
+      {
+        pending: 'Verificado dados',
+        success: 'Seja bem-vindo(a) 👌',
+        error: 'Verifique seu e-mail e senha 🤯',
+      }
+    )
   }
 
   return (
