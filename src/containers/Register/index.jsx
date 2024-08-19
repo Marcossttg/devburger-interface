@@ -53,7 +53,6 @@ export function Register() {
         success: 'Cadastro efetuado com Sucesso! 👌',
         error: 'Ops, algo deu errado! Tente novamente. 🤯',
       })
-    // console.log(data)
   }
 
   return (
