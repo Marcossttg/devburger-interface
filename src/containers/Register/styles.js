@@ -64,26 +64,16 @@ export const RightContainer = styled.div`
       color: #9758a6;
     }
 }
-
 `
 
 export const Title = styled.h2`
-	color: #FFF;
+	color: #9758A6;
 	text-align: center;
 	font-family: "Road Rage";
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 100%; /* 40px */
-
-	span {
-		color: #9758A6;
-		font-family: "Road Rage", sans-serif;
-		font-size: 40px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 100%;
-	}
+	line-height: 100%;
 `
 
 export const Form = styled.form`
@@ -93,7 +83,7 @@ export const Form = styled.form`
 	padding: 20px;
 	width: 100%;
 	max-width: 400px;
-	margin-top: 60px;
+	margin-top: 32px;
 	margin-bottom: 12px;
 `
 
