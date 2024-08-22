@@ -27,7 +27,7 @@ export function Register() {
       .required('O e-mail é obrigatório'),
     password: yup.string()
       .required('A senha é obrigatória')
-      .min(6, 'A senha deve ter no minimo 6 digítos'),
+      .min(3, 'A senha deve ter no minimo 3 digítos'),
     confirmPassword: yup.string()
       .required('A confirme a senha')
       .oneOf([yup.ref('password')], 'As senhas devem ser iguais'),
@@ -42,17 +42,30 @@ export function Register() {
   })
 
   const onSubmit = async (data) => {
-    const response = await toast.promise(
-      api.post('/users', {
-        name: data.name,
-        email: data.email,
-        password: data.password,
-      }),
-      {
-        pending: 'Verificado dados',
-        success: 'Cadastro efetuado com Sucesso! 👌',
-        error: 'Ops, algo deu errado! Tente novamente. 🤯',
-      })
+    try {
+      const { status } = await api.post(
+        '/users',
+        {
+          name: data.name,
+          email: data.email,
+          password: data.password,
+        },
+        {
+          validateStatus: () => true,
+        },
+      )
+      if (status === 200 || status === 201) {
+        toast.success('👌 Conta criada com sucesso!')
+      } else if (status === 409) {
+        toast.error('👓 Email já cadastrado! Faça o login para continuar')
+      } else {
+        throw new Error
+      }
+      console.log(status)
+    } catch (error) {
+      toast.error('🧨 Falha no Sistema! Tente novamente')
+    }
+
   }
 
   return (
