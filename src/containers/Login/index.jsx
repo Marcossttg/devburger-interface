@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { api } from "../../services/api"
+import { useNavigate } from "react-router-dom"
 
 // Biblioteca de feedback de eventos
 import * as yup from "yup"
@@ -16,10 +17,13 @@ import {
   InputContainer,
   LeftContainer,
   RightContainer,
-  Title
+  Title,
+  Link
 } from "./styles"
 
 export function Login() {
+  const navigate = useNavigate()
+
   const schema = yup
     .object({
       email: yup.string()
@@ -47,8 +51,15 @@ export function Login() {
       }),
       {
         pending: 'Verificado dados',
-        success: 'Seja bem-vindo(a) 👌',
-        error: 'Verifique seu e-mail e senha 🤯',
+        success: {
+          render() {
+            setTimeout(() => {
+              navigate('/')
+            }, 2000)
+            return `Seja bem-vindo(a) 👌`
+          },
+          error: 'Verifique seu e-mail e senha 🤯',
+        }
       }
     )
   }
@@ -80,7 +91,7 @@ export function Login() {
           <Button type="submit" style={{ marginTop: 60 }}>Entrar</Button>
         </Form>
 
-        <p>Não possui conta? <a>Clique aqui.</a></p>
+        <p>Não possui conta? <Link to="/cadastro">Clique aqui.</Link></p>
       </RightContainer>
     </Container>
   )

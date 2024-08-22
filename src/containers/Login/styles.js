@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import BackgroundLogin from "../../assets/background-login.svg"
 import Background from '../../assets/background.svg'
+import { Link as ReactLink } from "react-router-dom"
 
 export const Container = styled.div`
 display: flex;
@@ -49,22 +50,6 @@ export const RightContainer = styled.div`
 		font-weight: 700;
 		line-height: normal;
 	}
-  a {
-		color: #FFF;
-		font-family: Poppins, sans-serif;
-		font-size: 18px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		text-decoration-line: underline;
-    text-decoration: underline;
-    transition: ease-in-out;
-
-    &:hover {
-      color: #9758a6;
-    }
-}
-
 `
 
 export const Title = styled.h2`
@@ -132,4 +117,18 @@ export const InputContainer = styled.div`
 		margin-left: 5px;
 		height: 10px;
 	}
+`
+export const Link = styled(ReactLink)`
+		color: #FFF;
+		font-family: Poppins, sans-serif;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+    text-decoration: underline;
+    transition: ease-in-out;
+
+    &:hover {
+      color: #9758a6;
+    }
 `
