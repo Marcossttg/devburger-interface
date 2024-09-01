@@ -1,5 +1,6 @@
 import React from 'react'
 import { Banner, Container, Content } from './styles'
+import { CategoriesCarousel } from '../../components/CategoriesCarousel'
 
 export function Home() {
   return (
@@ -9,7 +10,7 @@ export function Home() {
       </Banner>
       <Container>
         <Content>
-          <div>CATEGORIAS</div>
+          <CategoriesCarousel />
           <div>OFERTAS DO DIA</div>
         </Content>
       </Container>
