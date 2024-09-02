@@ -4,23 +4,23 @@ import Background from '../../assets/background.svg'
 import { Link as ReactLink } from "react-router-dom"
 
 export const Container = styled.div`
-display: flex;
-height: 100vh;
-width: 100vw;
+	display: flex;
+	height: 100vh;
+	width: 100vw;
 `
 
 export const LeftContainer = styled.div`
-background: url('${BackgroundLogin}');
-background-size: cover;
-background-position: center;
+	background: url('${BackgroundLogin}');
+	background-size: cover;
+	background-position: center;
 
-height: 100%;
-width: 100%;
-max-width: 50%;
+	height: 100%;
+	width: 100%;
+	max-width: 50%;
 
-display: flex;
-align-items: center;
-justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	img {
 		width: 60%;
@@ -119,16 +119,16 @@ export const InputContainer = styled.div`
 	}
 `
 export const Link = styled(ReactLink)`
-		color: #FFF;
-		font-family: Poppins, sans-serif;
-		font-size: 18px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-    text-decoration: underline;
-    transition: ease-in-out;
+	color: #FFF;
+	font-family: Poppins, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-decoration: underline;
+	transition: ease-in-out;
 
-    &:hover {
-      color: #9758a6;
-    }
+	&:hover {
+		color: #9758a6;
+	}
 `
