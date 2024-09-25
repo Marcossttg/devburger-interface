@@ -1,7 +1,7 @@
 import React from 'react'
 import { Banner, Container, Content } from './styles'
 import { CategoriesCarousel } from '../../components/CategoriesCarousel'
-// import { OffersCarousel } from '../../components/OffersCarousel'
+import { OffersCarousel } from '../../components/OffersCarousel'
 
 export function Home() {
   return (
@@ -12,7 +12,7 @@ export function Home() {
       <Container>
         <Content>
           <CategoriesCarousel />
-          {/* <OffersCarousel /> */}
+          <OffersCarousel />
         </Content>
       </Container>
     </main>

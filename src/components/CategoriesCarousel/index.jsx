@@ -16,7 +16,6 @@ export function CategoriesCarousel() {
 			const { data } = await api.get('/categories')
 
 			setCategories(data)
-			console.log(data)
 		}
 
 		loadCategories()
@@ -50,7 +49,9 @@ export function CategoriesCarousel() {
 				partialVisbile={true}
 				itemClass="carousel-item">
 				{categories.map(category => (
-					<ContainerItems key={category.id} imageUrl={category.url}><p>{category.name}</p></ContainerItems>
+					<ContainerItems key={category.id} imageUrl={category.url}>
+						<p>{category.name}</p>
+					</ContainerItems>
 				))}
 			</Carousel>
 		</Container>

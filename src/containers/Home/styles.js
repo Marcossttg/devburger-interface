@@ -34,17 +34,5 @@ export const Container = styled.section`
 `
 
 export const Content = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 100px;
-
-		div {
-		color: #9758A6;
-		text-align: center;
-		font-family: Poppins;
-		font-size: 32px;
-		font-style: normal;
-		font-weight: 800;
-		line-height: normal;
-}
+	padding-bottom: 70px;
 `

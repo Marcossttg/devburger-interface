@@ -63,7 +63,6 @@ export function Login() {
       }
     )
     localStorage.setItem('token', token)
-    console.log(token)
   }
 
   return (
