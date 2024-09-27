@@ -3,7 +3,7 @@ import BannerHamburger from '../../assets/BannerHamburger.svg'
 import Background from '../../assets/background.svg'
 import { Link } from "react-router-dom"
 
-export const Container = styled.section`
+export const Container = styled.div`
 	width: 100%;
 	min-height: 100vh;
 	background-color: #f0f0f0;
@@ -63,15 +63,18 @@ export const CategoryButton = styled(Link)`
 	text-decoration: none;
 	cursor: pointer;
 	background: none;
-	color: #9758a6;
+	color: ${(props) => props.$isActiveCategory ?
+		'#9758a6' : '#313030'};
 	font-size: 24px;
-	font-weight: bold;
+	font-weight: 500;
 	padding-bottom: 5px;
 	line-height: 20px;
-	border-bottom: 3px solid #9758a6;
+	border: none;
+	border-bottom: ${(props) => props.$isActiveCategory &&
+		'3px solid #9758a6'};
 `
 
-export const ProductsContainer = styled.section`
+export const ProductsContainer = styled.div`
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	padding: 40px;
@@ -80,7 +83,7 @@ export const ProductsContainer = styled.section`
 	gap: 60px;
 	margin: 50px auto 0;
 
-		 	h2 {
+		 	/* h2 {
 		color: #61A120;
 		text-align: center;
 		font-family: Poppins;
@@ -88,5 +91,5 @@ export const ProductsContainer = styled.section`
 		font-style: normal;
 		font-weight: 800;
 		line-height: normal;
-	}
+	} */
 `
