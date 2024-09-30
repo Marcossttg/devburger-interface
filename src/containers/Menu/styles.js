@@ -82,14 +82,4 @@ export const ProductsContainer = styled.div`
 	max-width: 1280px;
 	gap: 60px;
 	margin: 50px auto 0;
-
-		 	/* h2 {
-		color: #61A120;
-		text-align: center;
-		font-family: Poppins;
-		font-size: 32px;
-		font-style: normal;
-		font-weight: 800;
-		line-height: normal;
-	} */
 `

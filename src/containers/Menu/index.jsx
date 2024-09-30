@@ -7,7 +7,7 @@ import {
 import { api } from '../../services/api'
 import { formatPrice } from '../../utils/formatPrice'
 import { CardProduct } from '../../components/CardProduct'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export function Menu() {
   const [categories, setCategories] = useState([])
@@ -16,9 +16,20 @@ export function Menu() {
 
   const [filteredProducts, setFilteredProducts] = useState([])
 
-  const [activeCategory, setActiveCategory] = useState(0)
-
   const navigate = useNavigate()
+
+  const { search } = useLocation()
+
+  const queryParams = new URLSearchParams(search)
+
+  const [activeCategory, setActiveCategory] = useState(() => {
+    const categoryId = +queryParams.get('categoria')
+
+    if (categoryId) {
+      return categoryId
+    }
+    return 0
+  })
 
   useEffect(() => {
     async function loadCategories() {
@@ -88,6 +99,18 @@ export function Menu() {
             {category.name}
           </CategoryButton>
         ))}
+        <CategoryButton
+          onClick={() => {
+            navigate({
+              pathname: '/cardapio',
+              search: `?categoria=0`
+            });
+            setActiveCategory(0);
+          }}
+          $isActiveCategory={false}
+        >
+          Voltar
+        </CategoryButton>
 
       </CategoryMenu>
       <ProductsContainer>
