@@ -10,6 +10,7 @@ import { toast } from 'react-toastify'
 // UseContext hook
 import Logo from '../../assets/logo.svg'
 import { Button } from "../../components/Button"
+import { useUser } from "../../hooks/UserContext"
 
 import {
   Container,
@@ -23,6 +24,7 @@ import {
 
 export function Login() {
   const navigate = useNavigate()
+  const { putUserData } = useUser()
 
   const schema = yup
     .object({
@@ -44,7 +46,7 @@ export function Login() {
   })
 
   const onSubmit = async (data) => {
-    const { data: { token } } = await toast.promise(
+    const { data: userData } = await toast.promise(
       api.post('/session', {
         email: data.email,
         password: data.password,
@@ -62,7 +64,7 @@ export function Login() {
         }
       }
     )
-    localStorage.setItem('token', token)
+    putUserData(userData)
   }
 
   return (
