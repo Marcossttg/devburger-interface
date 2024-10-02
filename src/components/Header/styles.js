@@ -22,19 +22,24 @@ export const Navigation = styled.nav`
 	justify-content: center;
 	height: 72px;
 
-	transition: color 200ms;
-
 	div{
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
+
+		hr {
+			height: 24px;
+			border: 1px solid #625E5E;
+		}
 	}
 `
 export const HeaderLink = styled(Link)`
-	color: #ffff;
+	color: ${props => props.$isActive ? '#9758a6' : '#ffff'};
+	border-bottom: ${props => props.$isActive ? '1px solid #9758a6' : 'none'};
 	text-decoration: none;
 	font-size: 14px;
+	transition: color 200ms;
 
 	&:hover {
 		color: #9758a6
