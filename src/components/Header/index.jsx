@@ -51,7 +51,7 @@ export function Header() {
           </Profile>
           <LinkContainer>
             <ClipboardText color="#fff" size={24} />
-            <HeaderLink to="/carrinho" $isActive={pathname === '/carrinho'}>Pedidos</HeaderLink>
+            <HeaderLink to="/pedidos" $isActive={pathname === '/pedidos'}>Pedidos</HeaderLink>
           </LinkContainer>
         </Options>
       </Content>
